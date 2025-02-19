@@ -9,12 +9,13 @@ $users = $sql->get_result();
 
 <div class="container mt-4">
     <h2 class="text-center">Users List</h2>
-    <a href="" class="btn btn-success mb-3">Add User</a>
+    <a href="./insert.php" class="btn btn-success mb-3">Add User</a>
     
     <div class="table-responsive">
         <table class="table table-bordered table-striped text-center">
             <thead class="table-dark">
                 <tr>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Age</th>
@@ -26,11 +27,16 @@ $users = $sql->get_result();
             <tbody>
                 <?php foreach ($users as $x) { ?>
                 <tr>
+                    <td><?= htmlspecialchars($x['id']) ?></td>
                     <td><?= htmlspecialchars($x['name']) ?></td>
                     <td><?= htmlspecialchars($x['email']) ?></td>
                     <td><?= htmlspecialchars($x['age']) ?></td>
                     <td><?= htmlspecialchars($x['dob']) ?></td>
                     <td><?= htmlspecialchars($x['mobile']) ?></td>
+                    <td>
+                    <a href="./id=<?= $row['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="./delete.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
                 
                 </tr>
                 <?php } ?>

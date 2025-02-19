@@ -16,8 +16,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto p-2">
-                    <li class="nav-item"><a class="nav-link" href="">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="">Add User</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../tutorials/Curd/index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../tutorials/Curd/insert.php">Add User</a></li>
                 </ul>
             </div>
         </div>
