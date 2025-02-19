@@ -1,7 +1,8 @@
 <?php
-include_once './config/database.php';
 include_once './includes/header.php';
+include_once './config/database.php';
 
+// Fetch all users
 $sql = $conn->prepare("SELECT * FROM users");
 $sql->execute();
 $users = $sql->get_result();
@@ -34,10 +35,9 @@ $users = $sql->get_result();
                     <td><?= htmlspecialchars($x['dob']) ?></td>
                     <td><?= htmlspecialchars($x['mobile']) ?></td>
                     <td>
-                    <a href="./id=<?= $row['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="./delete.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
-                </td>
-                
+                        <a href="./update.php?id=<?= $x['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="./delete.php?id=<?= $x['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                    </td>
                 </tr>
                 <?php } ?>
             </tbody>
